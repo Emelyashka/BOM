@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страница 3</title>
+</head>
+<body>
+    <form>
+        <p>Начислено<input type="text" id="nachisleno"></p>
+        <p>Удержано<input type="text" id="uderzhano"></p>
+        <p>Итого<input type="text" id="itogo"></p>
+        <p><button type="button" id="btn">Подсчитать</button></p>
+    </form>
+    <p><a href="2.html" id="back">Back</a></p>
+    <script>
+        document.querySelector("[type='button']").onclick=function() {
+            let nachisleno=document.querySelector("#nachisleno").value;
+            let uderzhano=document.querySelector("#uderzhano").value;
+            if (/^\d+$/.test(nachisleno) && /^\d+$/.test(uderzhano))
+                 document.querySelector("#itogo").value=nachisleno-uderzhano;
+            else
+                 alert ("Error input");
+        }
+        document.querySelector("#back").onclick=function(){
+            event.preventDefault();
+            history.back();
+            return false;
+        }
+    </script>
+</body>
+</html>
