@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страница 2</title>
+</head>
+<body>
+    <form>
+        <p>Разрешение по ширине<input type="text" name="" id="width"></p>
+        <p>Разрешение по высоте<input type="text" name="" id="height"></p>
+        <p>Ширина рабочей области<input type="text" name="" id="availWidth"></p>
+        <p>Высота рабочей области<input type="text" name="" id="availHeight"></p>
+        <input type="button" id="btn" value="Information about screen">
+    </form>
+    <p><a href="3.html">Next page</a></p>
+    <p><a href="1.html" id="back">Back</a></p>
+    <script>
+        document.querySelector("#btn").onclick=function(){
+            document.querySelector("#width").value=screen.width;
+            document.querySelector("#heigth").value=screen.heigth;
+            document.querySelector("#availWidth").value=screen.availWidth;
+            document.querySelector("#availHeight").value=screen.availHeigth;
+        }
+        document.querySelector("#back").onclick=function(){
+            event.preventDefault();
+            history.back();
+            return false;
+        }
+    </script>
+</body>
+</html>
